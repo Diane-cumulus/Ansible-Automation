@@ -87,7 +87,7 @@ def Generate_VM_Config(vfile,hostname,connection_map,hostname_code_mapper,mac_fi
         vfile.write("      #Apply the interface re-map\n")
         vfile.write("      "+filtered_hostname+".vm.provision \"file\", source: \""+script_storage+"/rename_eth_swp\", destination: \"/home/vagrant/rename_eth_swp\"\n")
         vfile.write("      "+filtered_hostname+".vm.provision \"file\", source: \""+script_storage+"/"+hostname+"_remap_eth\", destination: \"/home/vagrant/remap_eth\"\n")
-        if hostname == "msp2-cld-oob-01":
+        if hostname == "oob-01":
             vfile.write("      "+filtered_hostname+".vm.provision \"file\", source: \""+script_storage+"/oob_config\", destination: \"/home/vagrant/oob_config\"\n")
             vfile.write("      "+filtered_hostname+".vm.provision \"file\", source: \""+script_storage+"/apply_interface_remap_oob\", destination: \"/home/vagrant/apply_interface_remap\"\n")
         elif hostname == "cumulus1":

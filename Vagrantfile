@@ -246,7 +246,8 @@ Vagrant.configure("2") do |config|
       #Apply the interface re-map
       oob_01.vm.provision "file", source: "./helper_scripts/rename_eth_swp", destination: "/home/vagrant/rename_eth_swp"
       oob_01.vm.provision "file", source: "./helper_scripts/oob-01_remap_eth", destination: "/home/vagrant/remap_eth"
-      oob_01.vm.provision "file", source: "./helper_scripts/apply_interface_remap", destination: "/home/vagrant/apply_interface_remap"
+      oob_01.vm.provision "file", source: "./helper_scripts/oob_config", destination: "/home/vagrant/oob_config"
+      oob_01.vm.provision "file", source: "./helper_scripts/apply_interface_remap_oob", destination: "/home/vagrant/apply_interface_remap"
       oob_01.vm.provision "shell", inline: "chmod 777 /home/vagrant/apply_interface_remap"
       oob_01.vm.provision "shell", inline: "/home/vagrant/apply_interface_remap"
 
