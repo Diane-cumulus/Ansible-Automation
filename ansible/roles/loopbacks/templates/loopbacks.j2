@@ -1,0 +1,6 @@
+auto lo
+iface lo inet loopback
+    address {{ interfaces[ansible_hostname].loopback }}/32
+
+auto vagrant
+iface vagrant inet dhcp

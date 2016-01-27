@@ -19,6 +19,7 @@ Vagrant.configure("2") do |config|
       end
       cumulus1.vm.hostname = "cumulus1"
       cumulus1.vm.box = "ubuntu/trusty64"
+      cumulus1.vm.synced_folder "./ansible/", "/home/vagrant/ansible"
 
           # Local_Interface: eth0 Topology_File_Line(11):   "oob-01":"swp5" -- "cumulus1":"eth0"
           cumulus1.vm.network "private_network", virtualbox__intnet: 'net11', auto_config: false
