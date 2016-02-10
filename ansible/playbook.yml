@@ -2,7 +2,8 @@
 #- hosts: all
 - hosts: switches
   user: cumulus
-  become: sudo
+  become: yes
+  become_method: sudo
   roles:
     - common
 #    - interfaces
